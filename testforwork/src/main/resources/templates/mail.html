@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>入职欢迎邮件</title>
+
+    <style>
+        body {
+            font-family: SimHei;
+        }
+    </style>
+
+</head>
+<body>
+测试HTML转PDF
+<table border="1">
+    <tr>
+        <td>序号</td>
+        <td>编号</td>
+        <td>名称</td>
+        <td>模式</td>
+        <td>详情</td>
+    </tr>
+    <tr th:each="item:${list}">
+        <td><span th:text="${item.id}"></span></td>
+        <td><span th:text="${item.no}"></span></td>
+        <td><span th:text="${item.name}"></span></td>
+        <td><span th:text="${item.mode}"></span></td>
+        <td><span th:text="${item.detail}"></span></td>
+    </tr>
+<!--    <tr>-->
+<!--        <td>1</td>-->
+<!--        <td>11111111111111111111</td>-->
+<!--        <td>人工智能</td>-->
+<!--        <td>混合模式</td>-->
+<!--        <td>人工智能................</td>-->
+<!--    </tr>-->
+</table>
+<p>我们公司的工作忠旨是严格，创新，诚信，您的加入将为我们带来新鲜的血液，带来创新的思维，
+    以及为我们树立良好的公司形象！希望在以后的工作中我们能够齐心协力，与时俱进，团结协作！
+    同时也祝您在本公司，工作愉快，实现自己的人生价值!希望在未来的日子里，携手共进！</p>
+</body>
+</html>
