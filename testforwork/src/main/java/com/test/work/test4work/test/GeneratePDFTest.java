@@ -65,15 +65,20 @@ public class GeneratePDFTest {
         table.addCell(PdfUtils.createCell("名称", 1, HorizontalAlignment.CENTER));
         table.addCell(PdfUtils.createCell("模式", 1, HorizontalAlignment.CENTER));
         table.addCell(PdfUtils.createCell("详情", 1, HorizontalAlignment.CENTER));
-
-        for (int i = 0; i < 100000; i++) {
-            table.addCell(PdfUtils.createCell(String.valueOf(i + 1), false));
-            table.addCell(PdfUtils.createCell("11111111111111111111", false));
-            table.addCell(PdfUtils.createCell("人工智能", false));
-            table.addCell(PdfUtils.createCell("混合模式", false));
-            table.addCell(PdfUtils.createCell("人工智能................", false));
-        }
         document.add(table);
+        for (int j = 0; j < 100; j++) {
+            table = new Table(5);
+            widths = new int[]{11, 20, 20, 20, 29};
+            for (int i = 0; i < 1000; i++) {
+                PdfUtils.setTableStyle(table, widths);
+                table.addCell(PdfUtils.createCell(String.valueOf(1000 * j + i + 1), false));
+                table.addCell(PdfUtils.createCell("11111111111111111111", false));
+                table.addCell(PdfUtils.createCell("人工智能", false));
+                table.addCell(PdfUtils.createCell("混合模式", false));
+                table.addCell(PdfUtils.createCell("人工智能................", false));
+            }
+            document.add(table);
+        }
     }
 
 
