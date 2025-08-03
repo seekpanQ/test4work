@@ -69,6 +69,7 @@ public class GeneratePDFTest {
         for (int j = 0; j < 100; j++) {
             table = new Table(5);
             widths = new int[]{11, 20, 20, 20, 29};
+
             for (int i = 0; i < 1000; i++) {
                 PdfUtils.setTableStyle(table, widths);
                 table.addCell(PdfUtils.createCell(String.valueOf(1000 * j + i + 1), false));

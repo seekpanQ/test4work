@@ -59,7 +59,7 @@ public class TableInPDFBox {
                     xPos = 50; // 表格左上角的x坐标
                     yPos = 700; // 表格左上角的y坐标（注意：PDF坐标系统的原点在左下角）
                 }
-                float rowY = yPos - i * cellHeight;
+                float rowY = yPos - (i % 10) * cellHeight;
                 contentStream.moveTo(xPos, rowY);
                 contentStream.lineTo(xPos + cellWidth1 * 3 + cellWidth2 * 2, rowY);
                 contentStream.stroke();
@@ -93,7 +93,7 @@ public class TableInPDFBox {
                     }
                     contentStream.beginText();
                     contentStream.setFont(font, 10);
-                    contentStream.newLineAtOffset(startX + 3, yPos - i * cellHeight - 15);  //定点写入
+                    contentStream.newLineAtOffset(startX + 3, yPos - (i % 10) * cellHeight - 15);  //定点写入
                     contentStream.showText(text);
                     contentStream.endText();
                 }
